@@ -1,4 +1,9 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 ********
 >Author : hmarroquin
 | Date : 2015-04-18
@@ -85,7 +90,7 @@ StepsTaken
 hist(StepsTaken[,2])
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
 
 ### Mean and Median :
 
@@ -117,7 +122,7 @@ AvgStepInterval=aggregate(steps~interval, mean, data=activitydata)
 plot(AvgStepInterval[,1],AvgStepInterval[,2],type = "l")
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
 
 ### Max Step Interval :
 
@@ -166,7 +171,7 @@ StepDay=aggregate(steps~date, sum, data=activitydatafull)
 hist(StepDay[,2])
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-9-1.png) 
+![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9-1.png) 
 
 ```r
 mean(StepDay[,2])
@@ -215,6 +220,11 @@ library(ggplot2)
 ## Warning: package 'ggplot2' was built under R version 3.1.2
 ```
 
+```
+## Find out what's changed in ggplot2 with
+## news(Version == "1.0.0", package = "ggplot2")
+```
+
 ```r
 library(lattice)
 StepIntervalFull=aggregate(steps~interval+week, mean, data=activitydatafull)
@@ -223,7 +233,7 @@ xyplot(steps ~ interval | week, data = StepIntervalFull,
        main = "Average Steps by 5-minute Interval for Weekends and Weekdays")
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-11-1.png) 
+![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-1.png) 
 
 #### Observations :
 - Higher activity on weekends
